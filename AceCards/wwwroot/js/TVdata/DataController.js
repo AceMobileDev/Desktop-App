@@ -45,6 +45,31 @@ var module = angular.module('appRoute', ['firebase'])
         };
 
         //*****************************************************************************
+        // Gauge setup reverse
+        // This gauge setup is for times when you get worse as the number grows. 
+        // We will reverse the colors of the gague going from green -> red.
+        // Tom - 03/16/2018
+        //*****************************************************************************
+
+        $scope.gaugeOptionsReverse = {
+            angle: 0, // The span of the gauge arc
+            lineWidth: 0.37, // The line thickness
+            radiusScale: 1, // Relative radius
+            pointer: {
+                length: 0.38, // // Relative to gauge radius
+                strokeWidth: 0.057, // The thickness
+                color: '#000000' // Fill color
+            },
+            limitMax: true,   // If true, the pointer will not go past the end of the gauge
+            percentColors: [[0.0, "#30B32D"], [0.50, "#FFDD00"], [1.0, "#F03E3E"]], // Gauge Changes colors depending on position
+            colorStart: '#6FADCF',   // Colors
+            colorStop: '#8FC0DA',    // just experiment with them
+            strokeColor: '#E0E0E0',  // to see which ones work best for you
+            generateGradient: true,
+            highDpiSupport: true     // High resolution support
+        };
+
+        //*****************************************************************************
         // Give AngularFire time to get the data and then set the gauges in each card.
         // Additionally, watch for new changes in the database and set the gauge again.
         //*****************************************************************************
@@ -126,7 +151,7 @@ var module = angular.module('appRoute', ['firebase'])
 
             //Begin Firebase Goal_5
             var canvasOutage = document.getElementById('Canvas-Outage');
-            var gaugeOutage = new Gauge(canvasOutage).setOptions($scope.gaugeOptions);
+            var gaugeOutage = new Gauge(canvasOutage).setOptions($scope.gaugeOptionsReverse);
             gaugeOutage.maxValue = $scope.Data.Goal_5.Current_Goal;
             gaugeOutage.animationSpeed = 128; // set animation speed (32 is default value)
             gaugeOutage.set($scope.Data.Goal_5.Current_Value);
