@@ -7,20 +7,34 @@
 
     <environment include="Development">
         <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+
+        <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="~/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+
         <link href="~/css/Site/site.css" rel="stylesheet" />
+        <link href="~/css/NavigationBar/NavigationBar.css" rel="stylesheet" />
         <link href="~/css/Cards/CardDesign.css" rel="stylesheet" />
         <link href="~/css/Cards/CardEffect.css" rel="stylesheet" />
-        <link rel="stylesheet" href="~/lib/font-awesome/css/font-awesome.css" />
-        <link href="~/css/NavigationBar/NavigationBar.css" rel="stylesheet" />
-
     </environment>
 
     <environment exclude="Development">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
+        <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" asp-append-version="true">
+
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
               asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
-              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
-        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute"
+              integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+              crossorigin="anonymous"
+              rel="stylesheet" />
+
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+              asp-fallback-href="~/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet"
+              asp-append-version="true" />
+
+        <link href="~/css/Site/site.css" rel="stylesheet" asp-append-version="true" />
+        <link href="~/css/NavigationBar/NavigationBar.css" rel="stylesheet" asp-append-version="true" />
+        <link href="~/css/Cards/CardDesign.css" rel="stylesheet" asp-append-version="true" />
+        <link href="~/css/Cards/CardEffect.css" rel="stylesheet" asp-append-version="true" />
     </environment>
 </head>
 
@@ -105,23 +119,55 @@
         <script src="~/js/TVdata/DataController.js"></script>
         <script src="~/js/CardFlipEffect/CardFlip.js"></script>
     </environment>
+
     <environment exclude="Development">
-        <script src=" https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
                 asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
                 asp-fallback-test="window.jQuery"
                 crossorigin="anonymous"
                 integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN">
         </script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.js"
+                asp-fallback-src="~/lib/jquery-validation/dist/jquery.validate.min.js">
+        </script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+                asp-fallback-src="~/lib/popper.js/dist/popper.min.js"
+                integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+                crossorigin="anonymous">
+        </script>
+
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
                 asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
                 asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
-                crossorigin="anonymous"
-                integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1">
+                integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+                crossorigin="anonymous">
         </script>
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"
+
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"
                 asp-fallback-src="~/lib/angular/angular.min.js"
                 asp-fallback-test="window.angular">
         </script>
+
+        <!--Test if src goes to dist/guage.min.js-->
+        <script src="http://bernii.github.io/gauge.js/dist/gauge.min.js"
+                asp-fallback-src="~/lib/gauge.js/dist/gauge.min.js"
+                asp-fallback-test="window.angular">
+        </script>
+
+        <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"
+                asp-fallback-src="~/lib/firebase/firebase.js"
+                asp-fallback-test="window.angular">
+        </script>
+        <script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"
+                asp-fallback-src="~/lib/angularfire/dist/angularfire.min.js"
+                asp-fallback-test="window.angular">
+        </script>
+
+        <script src="~/js/TVdata/DataController.js"></script>
+        <script src="~/js/CardFlipEffect/CardFlip.js"></script>
+
     </environment>
 
     @RenderSection("Scripts", required: false)
