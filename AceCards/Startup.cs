@@ -8,6 +8,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
+using AceCards.Infrastructure.Abstract;
+using AceCards.Infrastructure.Concrete;
+using AceCards.Repository.Abstract;
+using AceCards.Repository.Concrete;
 
 namespace AceCards
 {
@@ -16,7 +20,6 @@ namespace AceCards
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
-
         }
 
         public IConfiguration Configuration { get; }
@@ -25,6 +28,10 @@ namespace AceCards
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+
+            //Add application services
+            services.AddTransient<ITestService, TestService>();
+            services.AddTransient<ITestRepository, TestRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
