@@ -15,4 +15,14 @@
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\AceCards.Domain\AceCards.Domain.csproj" />
+    <ProjectReference Include="..\AceCards.Infrastructure\AceCards.Infrastructure.csproj" />
+    <ProjectReference Include="..\AceCards.Repository\AceCards.Repository.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="ViewModels\" />
+  </ItemGroup>
+
 </Project>
