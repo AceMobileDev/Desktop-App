@@ -40,10 +40,10 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>{{Data.Goal_1.Q1_Value}}</td>
-                                    <td>{{Data.Goal_1.Q2_Value}}</td>
-                                    <td>{{Data.Goal_1.Q3_Value}}</td>
-                                    <td>{{Data.Goal_1.Q4_Value}}</td>
+                                    <td>{{Data.Goal_1.Q1_Value | number:0}}</td>
+                                    <td>{{Data.Goal_1.Q2_Value | number:0}}</td>
+                                    <td>{{Data.Goal_1.Q3_Value | number:0}}</td>
+                                    <td>{{Data.Goal_1.Q4_Value | number:0}}</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -62,9 +62,9 @@
                         <canvas id="Canvas-Projects"></canvas>
                     </div>
                     <div class="card-footer">
-                        <div>STATUS: &nbsp;<span class="bold">{{(100*Data.Goal_3.Current_Value/Data.Goal_3.Current_Goal)| number:0}}%</span></div>
-                        <div>CURRENT: &nbsp;<span class="bold">{{Data.Goal_3.Current_Value}}</span></div>
-                        <div>GOAL: &nbsp;<span class="bold">{{Data.Goal_3.Current_Goal}}</span></div>
+                        <div>STATUS: &nbsp;<span class="bold">{{(100*Data.Goal_3.Current_Value/Data.Goal_3.Current_Goal) | number:0}}%</span></div>
+                        <div>CURRENT: &nbsp;<span class="bold">{{Data.Goal_3.Current_Value | number:0}}</span></div>
+                        <div>GOAL: &nbsp;<span class="bold">{{Data.Goal_3.Current_Goal | number:0}}</span></div>
                     </div>
                 </div>
                 <!--CARD2 Details-->
@@ -85,10 +85,10 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>{{Data.Goal_3.Q1_Value}}</td>
-                                    <td>{{Data.Goal_3.Q2_Value}}</td>
-                                    <td>{{Data.Goal_3.Q3_Value}}</td>
-                                    <td>{{Data.Goal_3.Q4_Value}}</td>
+                                    <td>{{Data.Goal_3.Q1_Value | number:0}}</td>
+                                    <td>{{Data.Goal_3.Q2_Value | number:0}}</td>
+                                    <td>{{Data.Goal_3.Q3_Value | number:0}}</td>
+                                    <td>{{Data.Goal_3.Q4_Value | number:0}}</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -108,9 +108,9 @@
                             <canvas id="Canvas-Efficiency"></canvas>
                         </div>
                         <div class="card-footer">
-                            <div>STATUS: &nbsp;<span class="bold">{{(100*Data.Goal_4.Current_Value/Data.Goal_4.Current_Goal)| number:0}}%</span></div>
-                            <div>CURRENT: &nbsp;<span class="bold">{{Data.Goal_4.Current_Value}}</span></div>
-                            <div>GOAL: &nbsp;<span class="bold">{{Data.Goal_4.Current_Goal}}</span></div>
+                            <div>STATUS: &nbsp;<span class="bold">{{(100*Data.Goal_4.Current_Value/Data.Goal_4.Current_Goal) | number:0}}%</span></div>
+                            <div>CURRENT: &nbsp;<span class="bold">{{Data.Goal_4.Current_Value | number:0}}</span></div>
+                            <div>GOAL: &nbsp;<span class="bold">{{Data.Goal_4.Current_Goal | number:0}}</span></div>
                         </div>
                     </div>
                 </div>
@@ -132,10 +132,10 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>{{Data.Goal_4.Q1_Value}}</td>
-                                    <td>{{Data.Goal_4.Q2_Value}}</td>
-                                    <td>{{Data.Goal_4.Q3_Value}}</td>
-                                    <td>{{Data.Goal_4.Q4_Value}}</td>
+                                    <td>{{Data.Goal_4.Q1_Value | number:0}}</td>
+                                    <td>{{Data.Goal_4.Q2_Value | number:0}}</td>
+                                    <td>{{Data.Goal_4.Q3_Value | number:0}}</td>
+                                    <td>{{Data.Goal_4.Q4_Value | number:0}}</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -159,9 +159,9 @@
                             <canvas id="Canvas-Outage"></canvas>
                         </div>
                         <div class="card-footer">
-                            <div>STATUS: &nbsp;<span class="bold">{{(100*Data.Goal_5.Current_Value/Data.Goal_5.Current_Goal)| number:0}}%</span></div>
-                            <div>CURRENT: &nbsp;<span class="bold">{{Data.Goal_5.Current_Value}}</span></div>
-                            <div>GOAL: &nbsp;<span class="bold">{{Data.Goal_5.Current_Goal}}</span></div>
+                            <div>STATUS: &nbsp;<span class="bold">{{(100*Data.Goal_5.Current_Value/Data.Goal_5.Current_Goal) | number:0}}%</span></div>
+                            <div>CURRENT: &nbsp;<span class="bold">{{Data.Goal_5.Current_Value | number:0}}</span></div>
+                            <div>GOAL: &nbsp;<span class="bold">{{Data.Goal_5.Current_Goal | number:0}}</span></div>
                         </div>
                     </div>
                 </div>
@@ -183,10 +183,10 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>{{Data.Goal_5.Q1_Value}}</td>
-                                    <td>{{Data.Goal_5.Q2_Value}}</td>
-                                    <td>{{Data.Goal_5.Q3_Value}}</td>
-                                    <td>{{Data.Goal_5.Q4_Value}}</td>
+                                    <td>{{Data.Goal_5.Q1_Value | number:0}}</td>
+                                    <td>{{Data.Goal_5.Q2_Value | number:0}}</td>
+                                    <td>{{Data.Goal_5.Q3_Value | number:0}}</td>
+                                    <td>{{Data.Goal_5.Q4_Value | number:0}}</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -206,9 +206,9 @@
                             <canvas id="Canvas-Defect"></canvas>
                         </div>
                         <div class="card-footer">
-                            <div>STATUS: &nbsp;<span class="bold">{{(100*Data.Goal_2.Current_Value/Data.Goal_2.Current_Goal)| number:0}}%</span></div>
-                            <div>CURRENT: &nbsp;<span class="bold">{{Data.Goal_2.Current_Value}}</span></div>
-                            <div>GOAL: &nbsp;<span class="bold">{{Data.Goal_2.Current_Goal}}</span></div>
+                            <div>STATUS: &nbsp;<span class="bold">{{(100*Data.Goal_2.Current_Value/Data.Goal_2.Current_Goal) | number:0}}%</span></div>
+                            <div>CURRENT: &nbsp;<span class="bold">{{Data.Goal_2.Current_Value | number:0}}</span></div>
+                            <div>GOAL: &nbsp;<span class="bold">{{Data.Goal_2.Current_Goal | number:0}}</span></div>
                         </div>
                     </div>
                 </div>
@@ -253,9 +253,9 @@
                             <canvas id="Canvas-ChicagoSports"></canvas>
                         </div>
                         <div class="card-footer">
-                            <div>STATUS: &nbsp;<span class="bold">{{(100*Data.Goal_6.Current_Value/Data.Goal_6.Current_Goal)| number:0}}%</span></div>
-                            <div>CURRENT: &nbsp;<span class="bold">{{Data.Goal_6.Current_Value}}</span></div>
-                            <div>GOAL: &nbsp;<span class="bold">{{Data.Goal_6.Current_Goal}}</span></div>
+                            <div>STATUS: &nbsp;<span class="bold">{{(100*Data.Goal_6.Current_Value/Data.Goal_6.Current_Goal) | number:0}}%</span></div>
+                            <div>CURRENT: &nbsp;<span class="bold">{{Data.Goal_6.Current_Value | number:0}}</span></div>
+                            <div>GOAL: &nbsp;<span class="bold">{{Data.Goal_6.Current_Goal | number:0}}</span></div>
                         </div>
                     </div>
                 </div>
@@ -277,10 +277,10 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>{{Data.Goal_6.Q1_Value}}</td>
-                                    <td>{{Data.Goal_6.Q2_Value}}</td>
-                                    <td>{{Data.Goal_6.Q3_Value}}</td>
-                                    <td>{{Data.Goal_6.Q4_Value}}</td>
+                                    <td>{{Data.Goal_6.Q1_Value | number:0}}</td>
+                                    <td>{{Data.Goal_6.Q2_Value | number:0}}</td>
+                                    <td>{{Data.Goal_6.Q3_Value | number:0}}</td>
+                                    <td>{{Data.Goal_6.Q4_Value | number:0}}</td>
                                 </tr>
                             </tbody>
                         </table>
