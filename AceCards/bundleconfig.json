@@ -15,6 +15,12 @@
     ]
   },
   {
+    "outputFileName": "wwwroot/css/BarChart/BarChartDesign.min.css",
+    "inputFiles": [
+      "wwwroot/css/BarChart/BarChartDesign.css"
+    ]
+  },
+  {
     "outputFileName": "wwwroot/css/Cards/CardEffect.min.css",
     "inputFiles": [
       "wwwroot/css/Cards/CardEffect.css"

@@ -5,7 +5,7 @@
     <div class="container-fluid" ng-controller="DataController">
         <!--START CARD ROW1-->
         <div class="card-deck mt-4">
-            <!--CARD1 Budget-->
+            <!--CARD1-->
             <div class="card effect_flip">
                 <div class="card_front">
                     <div class="card-header badge-danger">
@@ -16,9 +16,9 @@
                             <canvas id="Canvas-Budget"></canvas>
                         </div>
                         <div class="card-footer">
-							<div>STATUS: &nbsp;<span id="budget-status" class="bold"></span></div>
+                            <div>STATUS: &nbsp;<span id="budget-status" class="bold"></span></div>
                             <div>CURRENT: &nbsp;<span class="bold">{{Data.Goal_1.Current_Value | currency:"$":0}}</span></div>
-                            <div>GOAL: &nbsp;<span id="budget-goal"class="bold">{{Data.Goal_1.Goal_Desc_Short}}</span></div>
+                            <div>GOAL: &nbsp;<span id="budget-goal" class="bold">{{Data.Goal_1.Goal_Desc_Short}}</span></div>
                         </div>
                     </div>
                 </div>
@@ -29,173 +29,13 @@
                     </div>
                     <div class="card-block">
                         <i>{{Data.Goal_1.Goal_Desc_Long}}</i>
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th scope="col">Q1</th>
-                                    <th scope="col">Q2</th>
-                                    <th scope="col">Q3</th>
-                                    <th scope="col">Q4</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>{{Data.Goal_1.Q1_Value | number:0}}</td>
-                                    <td>{{Data.Goal_1.Q2_Value | number:0}}</td>
-                                    <td>{{Data.Goal_1.Q3_Value | number:0}}</td>
-                                    <td>{{Data.Goal_1.Q4_Value | number:0}}</td>
-                                </tr>
-                            </tbody>
-                        </table>
+                        <div class="ct-chart-bar ct-golden-section" id="chart1"></div>
                     </div>
                 </div>
-                <!--END CARD! Details-->
+                <!--END CARD1 Details-->
             </div>
-            <!--END CARD1 Budget -->
-            <!--CARD2 PROJECTS_CLOSED-->
-            <div class="card effect_flip">
-                <div class="card_front">
-                    <div class="card-header badge-danger">
-                        Projects Closed
-                    </div>
-                    <div class="card-block">
-                        <canvas id="Canvas-Projects"></canvas>
-                    </div>
-                    <div class="card-footer">
-                        <div>STATUS: &nbsp;<span class="bold">{{(100*Data.Goal_3.Current_Value/Data.Goal_3.Current_Goal) | number:0}}%</span></div>
-                        <div>CURRENT: &nbsp;<span class="bold">{{Data.Goal_3.Current_Value | number:0}}</span></div>
-                        <div>GOAL: &nbsp;<span class="bold">{{Data.Goal_3.Current_Goal | number:0}}</span></div>
-                    </div>
-                </div>
-                <!--CARD2 Details-->
-                <div class="card_back">
-                    <div class="card-header badge-danger">
-                        Project Details
-                    </div>
-                    <div class="card-block">
-                        <i>Project Completion Goal - Complete Projects per Plan</i>
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th scope="col">Q1</th>
-                                    <th scope="col">Q2</th>
-                                    <th scope="col">Q3</th>
-                                    <th scope="col">Q4</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>{{Data.Goal_3.Q1_Value | number:0}}</td>
-                                    <td>{{Data.Goal_3.Q2_Value | number:0}}</td>
-                                    <td>{{Data.Goal_3.Q3_Value | number:0}}</td>
-                                    <td>{{Data.Goal_3.Q4_Value | number:0}}</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-                <!--END CARD2 DETAILS-->
-            </div>
-            <!--END CARD2 PROJECTS CLOSED-->
-            <!--CARD3 EFFICIENCY_HOURS_SAVED-->
-            <div class="card effect_flip">
-                <div class="card_front">
-                    <div class="card-header badge-danger">
-                        {{Data.Goal_4.Title_Label}}
-                    </div>
-                    <div class="card-block">
-                        <div>
-                            <canvas id="Canvas-Efficiency"></canvas>
-                        </div>
-                        <div class="card-footer">
-                            <div>STATUS: &nbsp;<span class="bold">{{(100*Data.Goal_4.Current_Value/Data.Goal_4.Current_Goal) | number:0}}%</span></div>
-                            <div>CURRENT: &nbsp;<span class="bold">{{Data.Goal_4.Current_Value | number:0}}</span></div>
-                            <div>GOAL: &nbsp;<span class="bold">{{Data.Goal_4.Current_Goal | number:0}}</span></div>
-                        </div>
-                    </div>
-                </div>
-                <!--CARD3 Details-->
-                <div class="card_back">
-                    <div class="card-header badge-danger">
-                        {{Data.Goal_4.Title_Label_Details}}
-                    </div>
-                    <div class="card-block">
-                        <i>{{Data.Goal_4.Goal_Desc_Long}}</i>
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th scope="col">Q1</th>
-                                    <th scope="col">Q2</th>
-                                    <th scope="col">Q3</th>
-                                    <th scope="col">Q4</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>{{Data.Goal_4.Q1_Value | number:0}}</td>
-                                    <td>{{Data.Goal_4.Q2_Value | number:0}}</td>
-                                    <td>{{Data.Goal_4.Q3_Value | number:0}}</td>
-                                    <td>{{Data.Goal_4.Q4_Value | number:0}}</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <!--END CARD3 DETAILS-->
-                </div>
-                <!--END CARD3 EFFICIENCY_HOURS_SAVED-->
-            </div>
-            <!--END CARD ROW-->
-        </div>
-        <!--START CARD ROW2-->
-        <div class="card-deck mt-3">
-            <!--CARD4 OUTAGE_HOURS-->
-            <div class="card effect_flip">
-                <div class="card_front">
-                    <div class="card-header badge-danger">
-                        {{Data.Goal_5.Title_Label}}
-                    </div>
-                    <div class="card-block">
-                        <div>
-                            <canvas id="Canvas-Outage"></canvas>
-                        </div>
-                        <div class="card-footer">
-                            <div>STATUS: &nbsp;<span class="bold">{{(100*Data.Goal_5.Current_Value/Data.Goal_5.Current_Goal) | number:0}}%</span></div>
-                            <div>CURRENT: &nbsp;<span class="bold">{{Data.Goal_5.Current_Value | number:0}}</span></div>
-                            <div>GOAL: &nbsp;<span class="bold">{{Data.Goal_5.Current_Goal | number:0}}</span></div>
-                        </div>
-                    </div>
-                </div>
-                <!--CARD3 Details-->
-                <div class="card_back">
-                    <div class="card-header badge-danger">
-                        {{Data.Goal_5.Title_Label_Details}}
-                    </div>
-                    <div class="card-block">
-                        <i>{{Data.Goal_5.Goal_Desc_Long}}</i>
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th scope="col">Q1</th>
-                                    <th scope="col">Q2</th>
-                                    <th scope="col">Q3</th>
-                                    <th scope="col">Q4</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>{{Data.Goal_5.Q1_Value | number:0}}</td>
-                                    <td>{{Data.Goal_5.Q2_Value | number:0}}</td>
-                                    <td>{{Data.Goal_5.Q3_Value | number:0}}</td>
-                                    <td>{{Data.Goal_5.Q4_Value | number:0}}</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <!--END CARD3 DETAILS-->
-                </div>
-            </div>
-            <!--END CARD4 OUTAGE_HOURS-->
-            <!--CARD5 DEFECT_REDUCTION-->
+            <!--END CARD1 -->
+            <!--CARD2-->
             <div class="card effect_flip">
                 <div class="card_front">
                     <div class="card-header badge-danger">
@@ -212,37 +52,114 @@
                         </div>
                     </div>
                 </div>
-                <!--CARD3 Details-->
+                <!--CARD2 Details-->
                 <div class="card_back">
                     <div class="card-header badge-danger">
                         {{Data.Goal_2.Title_Label_Details}}
                     </div>
                     <div class="card-block">
                         <i>{{Data.Goal_2.Goal_Desc_Long}}</i>
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th scope="col">Q1</th>
-                                    <th scope="col">Q2</th>
-                                    <th scope="col">Q3</th>
-                                    <th scope="col">Q4</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>{{Data.Goal_2.Q1_Value}}</td>
-                                    <td>{{Data.Goal_2.Q2_Value}}</td>
-                                    <td>{{Data.Goal_2.Q3_Value}}</td>
-                                    <td>{{Data.Goal_2.Q4_Value}}</td>
-                                </tr>
-                            </tbody>
-                        </table>
+                        <div class="ct-chart ct-golden-section" id="chart2"></div>
                     </div>
-                    <!--END CARD3 DETAILS-->
+                    <!--END CARD2-->
                 </div>
             </div>
-            <!--END CARD5 DEFECT_REDUCTION-->
-            <!--CARD6 CHICAGO_SPORTS_WINS-->
+            <!--END CARD2-->
+            <!--CARD3-->
+            <div class="card effect_flip">
+                <div class="card_front">
+                    <div class="card-header badge-danger">
+                        {{Data.Goal_3.Title_Label}}
+                    </div>
+                    <div class="card-block">
+                        <canvas id="Canvas-Projects"></canvas>
+                    </div>
+                    <div class="card-footer">
+                        <div>STATUS: &nbsp;<span class="bold">{{(100*Data.Goal_3.Current_Value/Data.Goal_3.Current_Goal) | number:0}}%</span></div>
+                        <div>CURRENT: &nbsp;<span class="bold">{{Data.Goal_3.Current_Value | number:0}}</span></div>
+                        <div>GOAL: &nbsp;<span class="bold">{{Data.Goal_3.Current_Goal | number:0}}</span></div>
+                    </div>
+                </div>
+                <!--CARD3 Details-->
+                <div class="card_back">
+                    <div class="card-header badge-danger">
+                        Project Details
+                    </div>
+                    <div class="card-block">
+                        <i>Project Completion Goal - Complete Projects per Plan</i>
+                        <div class="ct-chart ct-golden-section" id="chart3"></div>
+                    </div>
+                </div>
+                <!--END CARD3 DETAILS-->
+            </div>
+            <!--END CARD3 PROJECTS CLOSED-->
+            <!--END CARD ROW-->
+        </div>
+        <!--START CARD ROW2-->
+        <div class="card-deck mt-3">
+            <!--CARD4-->
+            <div class="card effect_flip">
+                <div class="card_front">
+                    <div class="card-header badge-danger">
+                        {{Data.Goal_4.Title_Label}}
+                    </div>
+                    <div class="card-block">
+                        <div>
+                            <canvas id="Canvas-Efficiency"></canvas>
+                        </div>
+                        <div class="card-footer">
+                            <div>STATUS: &nbsp;<span class="bold">{{(100*Data.Goal_4.Current_Value/Data.Goal_4.Current_Goal) | number:0}}%</span></div>
+                            <div>CURRENT: &nbsp;<span class="bold">{{Data.Goal_4.Current_Value | number:0}}</span></div>
+                            <div>GOAL: &nbsp;<span class="bold">{{Data.Goal_4.Current_Goal | number:0}}</span></div>
+                        </div>
+                    </div>
+                </div>
+                <!--CARD4 Details-->
+                <div class="card_back">
+                    <div class="card-header badge-danger">
+                        {{Data.Goal_4.Title_Label_Details}}
+                    </div>
+                    <div class="card-block">
+                        <i>{{Data.Goal_4.Goal_Desc_Long}}</i>
+                        <div class="ct-chart ct-golden-section" id="chart4"></div>
+                    </div>
+                    <!--END CARD4 DETAILS-->
+                </div>
+                <!--END CARD4-->
+            </div>
+
+
+            <!--CARD5-->
+            <div class="card effect_flip">
+                <div class="card_front">
+                    <div class="card-header badge-danger">
+                        {{Data.Goal_5.Title_Label}}
+                    </div>
+                    <div class="card-block">
+                        <div>
+                            <canvas id="Canvas-Outage"></canvas>
+                        </div>
+                        <div class="card-footer">
+                            <div>STATUS: &nbsp;<span class="bold">{{(100*Data.Goal_5.Current_Value/Data.Goal_5.Current_Goal) | number:0}}%</span></div>
+                            <div>CURRENT: &nbsp;<span class="bold">{{Data.Goal_5.Current_Value | number:0}}</span></div>
+                            <div>GOAL: &nbsp;<span class="bold">{{Data.Goal_5.Current_Goal | number:0}}</span></div>
+                        </div>
+                    </div>
+                </div>
+                <!--CARD5 Details-->
+                <div class="card_back">
+                    <div class="card-header badge-danger">
+                        {{Data.Goal_5.Title_Label_Details}}
+                    </div>
+                    <div class="card-block">
+                        <i>{{Data.Goal_5.Goal_Desc_Long}}</i>
+                        <div class="ct-chart ct-golden-section" id="chart5"></div>
+                    </div>
+                    <!--END CARD5 DETAILS-->
+                </div>
+            </div>
+            <!--END CARD5-->
+            <!--CARD6-->
             <div class="card effect_flip">
                 <div class="card_front">
                     <div class="card-header badge-danger">
@@ -259,38 +176,21 @@
                         </div>
                     </div>
                 </div>
-                <!--CARD3 Details-->
+                <!--CARD6 Details-->
                 <div class="card_back">
                     <div class="card-header badge-danger">
                         {{Data.Goal_6.Title_Label_Details}}
                     </div>
                     <div class="card-block">
                         <i>{{Data.Goal_6.Goal_Desc_Long}}</i>
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th scope="col">Q1</th>
-                                    <th scope="col">Q2</th>
-                                    <th scope="col">Q3</th>
-                                    <th scope="col">Q4</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>{{Data.Goal_6.Q1_Value | number:0}}</td>
-                                    <td>{{Data.Goal_6.Q2_Value | number:0}}</td>
-                                    <td>{{Data.Goal_6.Q3_Value | number:0}}</td>
-                                    <td>{{Data.Goal_6.Q4_Value | number:0}}</td>
-                                </tr>
-                            </tbody>
-                        </table>
+                        <div class="ct-chart ct-golden-section" id="chart6"></div>
                     </div>
-                    <!--END CARD3 DETAILS-->
+                    <!--END CARD6 DETAILS-->
                 </div>
-                <!--END CARD6 CHICAGO_SPORTS_WINS-->
+                <!--END CARD6-->
             </div>
             <!--END CARD ROW2-->
         </div>
     </div>
-
 </body>
+

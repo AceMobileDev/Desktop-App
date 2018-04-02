@@ -22,6 +22,7 @@
     "firebase": "v4.10.1",
     "angular": "v1.6.9",
     "angular-route": "v1.6.9",
-    "popper.js": "v1.13.0-next"
+    "popper.js": "v1.13.0-next",
+    "chartist": "v0.11.0"
   }
 }

@@ -83,12 +83,12 @@ var module = angular.module('DataModule', ['firebase'])
             gauge.minValue = 0;
             gauge.animationSpeed = 128; // set animation speed (32 is default value)
             gauge.set(100);
-            
+
 
             $scope.$watchCollection('[Data.Goal_1.Current_Value, Data.Goal_1.Current_Goal]', function () {
                 var budgetValue = $scope.Data.Goal_1.Current_Value;
                 var budgetGoal = $scope.Data.Goal_1.Current_Goal;
-                
+
                 //Made change to below logic for the budget goal:
                 //When the value is greater than zero, we want the gauge to show 100%
                 //Zero or less, we want the gauge to be 0%
@@ -209,6 +209,145 @@ var module = angular.module('DataModule', ['firebase'])
             });
             //End Goal_6
         }, 3000);
+
+        //*****************************************************************************
+        //**Settings for the Charts
+        //*****************************************************************************
+        $timeout(function () {
+
+            // Create a new line chart object where as first parameter we pass in a selector
+            // that is resolving to our chart container element. The Second parameter
+            // is the actual data object.
+
+            new Chartist.Bar('#chart1', {
+                labels: ['Q1', 'Q2', 'Q3', 'Q4'],
+                series: [
+                    [$scope.Data.Goal_1.Q1_Value, $scope.Data.Goal_1.Q2_Value, $scope.Data.Goal_1.Q3_Value, $scope.Data.Goal_1.Q4_Value]
+                ]
+            }, {
+                plugins: [
+                    Chartist.plugins.ctBarLabels()
+                ],
+                axisY: {
+                        onlyInteger: true,
+                        //For now adding data type but this will be need to addressed in Firebase instead
+                        labelInterpolationFnc: function (value) {
+                            return '$' + (value / 1000) + 'k';
+                        }
+                    },
+                }).on('draw', function (data) {
+                    if (data.type === 'bar') {
+                        data.element.attr({
+                            style: 'stroke-width: 60px'
+                        });
+                    }
+                });
+
+            new Chartist.Bar('#chart2', {
+                labels: ['Q1', 'Q2', 'Q3', 'Q4'],
+                series: [
+                    [$scope.Data.Goal_2.Q1_Value, $scope.Data.Goal_2.Q2_Value, $scope.Data.Goal_2.Q3_Value, $scope.Data.Goal_2.Q4_Value]
+                ]
+            }, {
+                    plugins: [
+                        Chartist.plugins.ctBarLabels()
+                    ],
+                    axisY: {
+                        onlyInteger: true,
+                    },
+                }).on('draw', function (data) {
+                    if (data.type === 'bar') {
+                        data.element.attr({
+                            style: 'stroke-width: 60px'
+                        });
+                    }
+                });
+
+            new Chartist.Bar('#chart3', {
+                labels: ['Q1', 'Q2', 'Q3', 'Q4'],
+                series: [
+                    [$scope.Data.Goal_3.Q1_Value, $scope.Data.Goal_3.Q2_Value, $scope.Data.Goal_3.Q3_Value, $scope.Data.Goal_3.Q4_Value]
+                ]
+            }, {
+                    plugins: [
+                        Chartist.plugins.ctBarLabels()
+                    ],
+                    axisY: {
+                        onlyInteger: true,
+                    },
+                }).on('draw', function (data) {
+                    if (data.type === 'bar') {
+                        data.element.attr({
+                            style: 'stroke-width: 60px'
+                        });
+                    }
+                });
+
+            new Chartist.Bar('#chart4', {
+                labels: ['Q1', 'Q2', 'Q3', 'Q4'],
+                series: [
+                    [$scope.Data.Goal_4.Q1_Value, $scope.Data.Goal_4.Q2_Value, $scope.Data.Goal_4.Q3_Value, $scope.Data.Goal_4.Q4_Value]
+                ]
+            }, {
+                    plugins: [
+                        Chartist.plugins.ctBarLabels()
+                    ],
+                    axisY: {
+                        onlyInteger: true,
+                    },
+                }).on('draw', function (data) {
+                    if (data.type === 'bar') {
+                        data.element.attr({
+                            style: 'stroke-width: 60px'
+                        });
+                    }
+                });
+
+
+            new Chartist.Bar('#chart5', {
+                labels: ['Q1', 'Q2', 'Q3', 'Q4'],
+                series: [
+                    [$scope.Data.Goal_5.Q1_Value, $scope.Data.Goal_5.Q2_Value, $scope.Data.Goal_5.Q3_Value, $scope.Data.Goal_5.Q4_Value]
+                ]
+            },
+                {
+                    plugins: [
+                        Chartist.plugins.ctBarLabels()
+                    ],
+                    axisY: {
+                        onlyInteger: true,
+                    },
+                }).on('draw', function (data) {
+                    if (data.type === 'bar') {
+                        data.element.attr({
+                            style: 'stroke-width: 60px'
+                        });
+                    }
+                });
+
+            new Chartist.Bar('#chart6', {
+                labels: ['Q1', 'Q2', 'Q3', 'Q4'],
+                series: [
+                    [$scope.Data.Goal_6.Q1_Value, $scope.Data.Goal_6.Q2_Value, $scope.Data.Goal_6.Q3_Value, $scope.Data.Goal_6.Q4_Value]
+                ]
+            },
+                {
+                    plugins: [
+                        Chartist.plugins.ctBarLabels()
+                    ],
+                    axisY: {
+                        onlyInteger: true,
+                    },
+                }).on('draw', function (data) {
+                    if (data.type === 'bar') {
+                        data.element.attr({
+                            style: 'stroke-width: 60px'
+                        });
+                    }
+                });
+
+        }, 3000);
+
     }]);
 
 
