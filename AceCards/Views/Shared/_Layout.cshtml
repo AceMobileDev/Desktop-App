@@ -10,11 +10,13 @@
 
         <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
         <link href="~/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
-        
+
         <link href="~/css/Site/site.min.css" rel="stylesheet" />
         <link href="~/css/NavigationBar/NavigationBar.css" rel="stylesheet" />
         <link href="~/css/Cards/CardDesign.min.css" rel="stylesheet" />
         <link href="~/css/Cards/CardEffect.min.css" rel="stylesheet" />
+        <link href="~/lib/chartist/dist/chartist.min.css" rel="stylesheet" />
+        <link href="~/css/BarChart/BarChartDesign.min.css" rel="stylesheet" />
     </environment>
 
     <environment exclude="Development">
@@ -31,6 +33,9 @@
               asp-fallback-href="~/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet"
               asp-append-version="true" />
 
+        <link href="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css"
+              asp-fallback-href="~/lib/chartist/dist/chartist.min.css" rel="stylesheet"
+              asp-append-version="true" />
         <link href="~/css/Site/site.css" rel="stylesheet" asp-append-version="true" />
         <link href="~/css/NavigationBar/NavigationBar.css" rel="stylesheet" asp-append-version="true" />
         <link href="~/css/Cards/CardDesign.min.css" rel="stylesheet" asp-append-version="true" />
@@ -108,6 +113,7 @@
         <script src="~/lib/umd/popper.js"></script>
         <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
 
+        <script src="~/lib/chartist/dist/chartist.js"></script>
         <!--AngularJS + Gauge HAS to be loaded first-->
         <script src="~/lib/angular/angular.js"></script>
         <script src="~/lib/gauge.js/dist/gauge.js"></script>
@@ -118,6 +124,8 @@
 
         <script src="~/js/TVdata/DataController.js"></script>
         <script src="~/js/CardFlipEffect/CardFlip.min.js"></script>
+        <script src="~/lib/chartist/dist/chartist.min.js"></script>
+        <script src="~/lib/chartist-bar-labels-gh-pages/scripts/chartist-bar-labels.js"></script>
     </environment>
 
     <environment exclude="Development">
@@ -165,8 +173,10 @@
                 asp-fallback-test="window.angular">
         </script>
 
-        <script src="~/js/TVdata/DataController.js"></script>
-        <script src="~/js/CardFlipEffect/CardFlip.js"></script>
+        <script src="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"
+                asp-fallback-src="~/lib/chartist/dist/chartist.min.js"
+                asp-fallback-test="window.angular">
+        </script>
 
     </environment>
 
