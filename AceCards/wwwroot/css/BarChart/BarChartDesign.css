@@ -2,3 +2,7 @@
     font-weight: bold;
     fill: #ffffff;
 }
+.ct-label{
+    fill: #000000 !important;
+    color: #000000 !important;
+}
