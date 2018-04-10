@@ -38,9 +38,7 @@
     margin-left: 10px;
     margin-right: 12px;
 }
- .animation-transition-general, .nav-pills .nav-link, .nav-tabs .nav-link, .navbar, .navbar-collapse .navbar-nav .nav-link, .off-canvas-sidebar .logo a.logo-mini, .off-canvas-sidebar .logo a.logo-normal, .off-canvas-sidebar .navbar-minimize, .off-canvas-sidebar .nav p, .sidebar .logo a.logo-mini, .sidebar .logo a.logo-normal, .sidebar .nav a, .sidebar .nav a i, .sidebar .navbar-minimize, .sidebar .nav p, .tag, .tag [data-role=remove] {
-    transition: all .3s ease 0s;
-}
+
  .off-canvas-sidebar .logo .simple-text, .sidebar .logo .simple-text {
     text-transform: uppercase;
     padding: .5rem 0;
@@ -154,17 +152,4 @@
     text-align: center;
     color: hsla(0,0%,100%,.5);
     position: relative;
-}
- @media (min-width: 992px) {
-    .sidebar .nav > li.active-pro {
-    position: absolute;
-    width: 100%;
-    bottom: 10px;
-}
-}
- @media (min-width: 991px) {
-    .sidebar {
-    display: block;
-    box-shadow: 0 2px 22px 0 rgba(0,0,0,.2), 0 2px 30px 0 rgba(0,0,0,.35);
-}
 }
