@@ -1,6 +1,7 @@
 ﻿
 .card {
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    margin: auto;
 }
 
 .card-header {
@@ -8,4 +9,66 @@
     background-image: linear-gradient(to right, #EB3349, #F45C43);
     font-size: 20px;
     border-radius: 0.25rem !important;
+}
+
+
+/*small screens*/
+@media (max-width: 768px) {
+
+    .card-deck {
+        margin: auto;
+        display: block;
+    }
+
+    .sidebar {
+        visibility: hidden;
+    }
+
+    .main-panel {
+        position: relative;
+        transition: all .5s cubic-bezier(.685,.0473,.346,1);
+        width: 100%;
+    }
+}
+
+@media (min-width: 769px) {
+    .main-panel {
+        position: relative;
+        float: right;
+        width: calc(100% - 260px);
+        transition: all .5s cubic-bezier(.685,.0473,.346,1);
+    }
+
+    .sidebar {
+        display: block;
+        box-shadow: 0 2px 22px 0 rgba(0,0,0,.2), 0 2px 30px 0 rgba(0,0,0,.35);
+    }
+}
+
+
+/* This section makes the card deck more responsive*/
+.card-deck {
+    display: grid;
+}
+
+@media (min-width: 768px) {
+    .card {
+        margin: auto;
+    }
+
+    .card-deck {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media (min-width: 992px) {
+    .card-deck {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 1200px) {
+    .card-deck {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
